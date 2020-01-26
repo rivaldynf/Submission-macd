@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Upload to BLOB</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-</head>
-<body>
-<h1><center><u>Mengunggah file gambar ke Azure Blob</u></center></h1>
-<form action="phpQS.php" method="post" enctype="multipart/form-data">
-    Pilih file :
-    <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload file" name="submit">
-</form>
-<script type="text/javascript">
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Analyze Sample</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    </head>
+    <body>
+     
+    <script type="text/javascript">
         function processImage() {
             // **********************************************
             // *** Update or verify the following values. ***
@@ -81,22 +76,29 @@
         };
     </script>
      
-    <br> <br> <br>
-<h1><center><u>Analisis Gambar</u></center></h1>
-Masukkan URL gambar, lalu klik tombol <strong>Analisis Gambar</strong> 
-<br><br>
-URL Gambar:
-<input type="text" name="inputImage" id="inputImage"
-    value="" />
-<button onclick="processImage()">Analisis Gambar</button>
-<br><br>
-<div id="wrapper" style="width:1020px; display:table;">
-    
-    <div id="imageDiv" style="width:420px; display:table-cell;">
-        Tampilan Gambar:
-        <br><br>
-        <img id="sourceImage" width="400" />
-    <figcaption id="description"></figcaption>
-</div>
-</body>
-</html>
+    <h1>Analyze image:</h1>
+    Enter the URL to an image, then click the <strong>Analyze image</strong> button.
+    <br><br>
+    <div class="mt-4 mb-2">
+        <form class="d-flex justify-content-lefr" action="phpQS.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="fileToUpload" accept="image/*" id="fileToUpload">
+                <input type="submit" value="Upload file" name="submit">
+                <button onclick="processImage()">Analyze image</button>
+        </form>
+    </div>
+    <br><br>
+    <div id="wrapper" style="width:1020px; display:table;">
+        <div id="jsonOutput" style="width:600px; display:table-cell;">
+            Response:
+            <br><br>
+            <textarea id="responseTextArea" class="UIInput"
+                      style="width:580px; height:400px;"></textarea>
+        </div>
+        <div id="imageDiv" style="width:420px; display:table-cell;">
+            Source image:
+            <br><br>
+            <img id="sourceImage" width="400" />
+        </div>
+    </div>
+    </body>
+    </html>
