@@ -165,4 +165,4 @@ else
     <button type="submit">Hapus file yang baru di Unggah</button>
    
 </form>
-  <a href="https://rivaldynf.azurewebsites.net">Klik Untuk Analisis Gambar</a>
+  <a href="https://rivaldy.azurewebsites.net">Klik Untuk Analisis Gambar</a>
