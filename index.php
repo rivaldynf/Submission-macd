@@ -87,16 +87,20 @@
     </div>
 
     <h1>Analyze image:</h1>
-    Enter the URL to an image, then click the <strong>Analyze image</strong> button.
+     Masukkan URL gambar, lalu klik tombol Analisis Gambar 
     <br><br>
-    <div class="mt-4 mb-2">
-        <form class="d-flex justify-content-lefr" action="phpQS.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="fileToUpload" accept="image/*" id="fileToUpload">
-                <input type="submit" value="Upload file" name="submit">
-        </form>
-    </div>
-
+    URL Gambar:
+<input type="text" name="inputImage" id="inputImage"
+    value="" />
+<button onclick="processImage()">Analisis Gambar</button>
+<br><br>
+<div id="wrapper" style="width:1020px; display:table;">
     
-
+    <div id="imageDiv" style="width:420px; display:table-cell;">
+        Tampilan Gambar:
+        <br><br>
+        <img id="sourceImage" width="400" />
+    <figcaption id="description"></figcaption>
+</div>
 </body>
 </html>
