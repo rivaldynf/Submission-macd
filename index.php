@@ -73,12 +73,10 @@
     <h1>Analyze image:</h1>
     Enter the URL to an image, then click the <strong>Analyze image</strong> button.
     <br><br>
-    <div class="mt-4 mb-2">
-        <form class="d-flex justify-content-lefr" action="index.php" method="post" enctype="multipart/form-data">
-                <input type="file" name="fileToUpload" accept=".jpeg,.jpg,.png">
-                <button onclick="processImage()">Analyze image</button>
-        </form>
-    </div>
+    Image to analyze:
+    <input type="file" name="inputImage" id="inputImage"
+        value="" />
+    <button onclick="processImage()">Analyze image</button>
     <br><br>
     <div id="wrapper" style="width:1020px; display:table;">
         <div id="jsonOutput" style="width:600px; display:table-cell;">
