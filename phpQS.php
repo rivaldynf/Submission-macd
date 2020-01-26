@@ -35,7 +35,7 @@ if (!isset($_GET["Cleanup"])) {
         // Getting local file so that we can upload it to Azure
         $myfile = fopen($fileToUpload, "r") or die("Unable to open file!");
         fclose($myfile);
-        echo "File Sukses Terupload";
+        echo "File Berhasil Di Upload";
         
         $content = fopen($fileToUpload, "r");
 
@@ -96,4 +96,4 @@ else
     <button type="submit">Hapus file yang baru di Unggah</button>
    
 </form>
-  <a href="https://rivaldy.azurewebsites.net">Klik Untuk Analisis Gambar</a>
+  <a href="https://rivaldy.azurewebsites.net">Klik Analisis Gambar</a>
