@@ -83,22 +83,20 @@
         <form class="d-flex justify-content-lefr" action="phpQS.php" method="post" enctype="multipart/form-data">
                 <input type="file" name="fileToUpload" accept="image/*" id="fileToUpload">
                 <input type="submit" value="Upload file" name="submit">
-                <button onclick="processImage()">Analyze image</button>
         </form>
     </div>
+
+    <h1>Analyze image:</h1>
+    Enter the URL to an image, then click the <strong>Analyze image</strong> button.
     <br><br>
-    <div id="wrapper" style="width:1020px; display:table;">
-        <div id="jsonOutput" style="width:600px; display:table-cell;">
-            Response:
-            <br><br>
-            <textarea id="responseTextArea" class="UIInput"
-                      style="width:580px; height:400px;"></textarea>
-        </div>
-        <div id="imageDiv" style="width:420px; display:table-cell;">
-            Source image:
-            <br><br>
-            <img id="sourceImage" width="400" />
-        </div>
+    <div class="mt-4 mb-2">
+        <form class="d-flex justify-content-lefr" action="phpQS.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="fileToUpload" accept="image/*" id="fileToUpload">
+                <input type="submit" value="Upload file" name="submit">
+        </form>
     </div>
-    </body>
-    </html>
+
+    
+
+</body>
+</html>
