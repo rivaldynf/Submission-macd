@@ -73,7 +73,6 @@
     <h1>Analyze image:</h1>
     Enter the URL to an image, then click the <strong>Analyze image</strong> button.
     <br><br>
-    Image to analyze:
     <input type="file" name="inputImage" id="inputImage">
     <button onclick="processImage()">Analyze image</button>
     <br><br>
