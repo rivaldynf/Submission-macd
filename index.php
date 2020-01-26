@@ -1,12 +1,17 @@
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Analyze Sample</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    </head>
-    <body>
-     
-    <script type="text/javascript">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload to BLOB</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<h1><center><u>Mengunggah file gambar ke Azure Blob</u></center></h1>
+<form action="phpQS.php" method="post" enctype="multipart/form-data">
+    Pilih file :
+    <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload file" name="submit">
+</form>
+<script type="text/javascript">
         function processImage() {
             // **********************************************
             // *** Update or verify the following values. ***
@@ -55,8 +60,14 @@
             })
      
             .done(function(data) {
-                // Show formatted JSON on webpage.
-                $("#responseTextArea").val(JSON.stringify(data, null, 2));
+            // Show formatted JSON on webpage.
+            $("#responseTextArea").val(JSON.stringify(data, null, 2));
+            console.log(data.categories[0].name);
+               console.log(data.description.captions[0]);
+               console.log(data)
+               desk1 = data.description.captions[0].text;
+            desk = data.categories[0].name;
+            document.getElementById("description").innerHTML = (desk1);
             })
      
             .fail(function(jqXHR, textStatus, errorThrown) {
@@ -70,33 +81,22 @@
         };
     </script>
      
-    <h1>Analyze image:</h1>
-    Enter the URL to an image, then click the <strong>Analyze image</strong> button.
-    <br><br>
-    <form action="" method="POST" enctype="multipart/form-data">
-         <input type="file" name="image" />
-         <input type="submit"/>
-      </form>
-    <button onclick="processImage()">Analyze image</button>
-    <br><br>
-    <div id="wrapper" style="width:1020px; display:table;">
-        <div id="jsonOutput" style="width:600px; display:table-cell;">
-            Response:
-            <br><br>
-            <textarea id="responseTextArea" class="UIInput"
-                      style="width:580px; height:400px;"></textarea>
-        </div>
-        <div id="imageDiv" style="width:420px; display:table-cell;">
-            Source image:
-            <br><br>
-            <img id="sourceImage" width="400" />
-        </div>
-    </div>
-        
-        <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
-    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
-  </body>
+    <br> <br> <br>
+<h1><center><u>Analisis Gambar</u></center></h1>
+Masukkan URL gambar, lalu klik tombol <strong>Analisis Gambar</strong> 
+<br><br>
+URL Gambar:
+<input type="text" name="inputImage" id="inputImage"
+    value="" />
+<button onclick="processImage()">Analisis Gambar</button>
+<br><br>
+<div id="wrapper" style="width:1020px; display:table;">
+    
+    <div id="imageDiv" style="width:420px; display:table-cell;">
+        Tampilan Gambar:
+        <br><br>
+        <img id="sourceImage" width="400" />
+    <figcaption id="description"></figcaption>
+</div>
+</body>
 </html>
